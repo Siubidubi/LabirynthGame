@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public virtual void Pick()
     {
-        
+        Debug.Log("Podniesiono");
+        Destroy(this.gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

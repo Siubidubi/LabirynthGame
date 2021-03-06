@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
                     break;
             }
         }
-     
+
         Vector3 move = transform.right * x + transform.forward * z;
         characterController.Move(move * speed * Time.deltaTime);
 
@@ -72,6 +72,15 @@ public class PlayerController : MonoBehaviour
 
         characterController.Move(velocity);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "PickUp")
+        {
+            other.gameObject.GetComponent<PickUp>().Pick();
+        }
+    }
+
 }
 
 
